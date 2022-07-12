@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- form requiring name, address, productnumber,card number,CVV,expiration date -->
+    <form class="payment_form" action="">
+        <div class="container">
+            <h1>Payment Form</h1>
+            <p>Please fill in this form to make payment.</p>
+            <hr>
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" required>
+            <label for="address"><b>Address</b></label>
+            <input type="text" placeholder="Enter Address" name="address" required>
+            <label for="productnumber"><b>Product Number</b></label>
+            <input type="text" placeholder="Enter Product Number" name="productnumber" required>
+
+            <label for="card-number"><b>Card Number and CVV</b></label>
+
+            <div class="cardcvv">
+                <input type="text" placeholder="Enter Card Number" name="cardnumber" required>
+
+                <input type="text" placeholder="Enter CVV" name="cvv" required>
+            </div>
+            <label for="expirationdate"><b>Expiration Date</b></label>
+            <div class="expirationdate">
+                <!-- select month and year -->
+
+                <select name="month">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select name="year">
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+                <div class="cards">
+                    <img src="mc.png" alt="">
+                    <img src="vi.png" alt="">
+                    <img src="pp.png" alt="">
+                </div>
+            </div>
+            <hr>
+            <button type="submit" class="registerbtn">Pay</button>
+        </div>
+
+    </form>
+    
+
+    <script>
+        // store all values in local storage
+        function storeValues() {
+            localStorage.setItem("name", document.getElementById("name").value);
+            localStorage.setItem("address", document.getElementById("address").value);
+            localStorage.setItem("productnumber", document.getElementById("productnumber").value);
+            localStorage.setItem("cardnumber", document.getElementById("cardnumber").value);
+            localStorage.setItem("cvv", document.getElementById("cvv").value);
+            localStorage.setItem("month", document.getElementById("month").value);
+            localStorage.setItem("year", document.getElementById("year").value);
+        }
+        // event listener for submit button
+        document.getElementById("submit").addEventListener("click", storeValues);
+
+        
+    </script>
+
+</body>
+
+</html>
